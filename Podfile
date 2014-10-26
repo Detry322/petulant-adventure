@@ -5,9 +5,13 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'Petulant Adventure' do
 
+	pod "Mapbox-iOS-SDK"
+
 end
 
 target 'Petulant AdventureTests' do
+
+	pod "Mapbox-iOS-SDK"
 
 end
 
