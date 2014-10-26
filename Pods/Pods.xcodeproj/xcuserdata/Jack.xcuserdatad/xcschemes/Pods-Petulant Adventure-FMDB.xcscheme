@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ACB74C7185FAEE0CC7731611"
+               BlueprintIdentifier = "5AF41A5BDC4B9B534309B88B"
                BuildableName = "libPods-Petulant Adventure-FMDB.a"
                BlueprintName = "Pods-Petulant Adventure-FMDB"
                ReferencedContainer = "container:Pods.xcodeproj">

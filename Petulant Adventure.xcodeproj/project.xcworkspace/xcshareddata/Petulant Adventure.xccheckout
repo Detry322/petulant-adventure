@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>430BB4AB-F96E-4C4B-A060-CAC11A0FCCDF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Petulant Adventure</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>04374859978B0B401147177B8A9B09A2782C4E7F</key>
+		<string>github.com:Detry322/petulant-adventure.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Petulant Adventure.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>04374859978B0B401147177B8A9B09A2782C4E7F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:Detry322/petulant-adventure.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>04374859978B0B401147177B8A9B09A2782C4E7F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>04374859978B0B401147177B8A9B09A2782C4E7F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Petulant%20Adventure</string>
+		</dict>
+	</array>
+</dict>
+</plist>
