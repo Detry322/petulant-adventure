@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3FAF6E4B6174518562152AAB"
+               BlueprintIdentifier = "C3E7773EAEA9304F13BB54EF"
                BuildableName = "libPods-Petulant AdventureTests-AFNetworking.a"
                BlueprintName = "Pods-Petulant AdventureTests-AFNetworking"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5A3110A4A9C1099E401D53F1"
+               BlueprintIdentifier = "8F61FBF0B46BF16AACFC7222"
                BuildableName = "libPods-Petulant Adventure-SMCalloutView.a"
                BlueprintName = "Pods-Petulant Adventure-SMCalloutView"
                ReferencedContainer = "container:Pods.xcodeproj">

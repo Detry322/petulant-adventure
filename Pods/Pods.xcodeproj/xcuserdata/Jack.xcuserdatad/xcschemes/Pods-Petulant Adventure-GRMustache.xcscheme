@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "975D37C6DBDFBF742570026B"
+               BlueprintIdentifier = "BE42160F9B7DCC7AFC87F480"
                BuildableName = "libPods-Petulant Adventure-GRMustache.a"
                BlueprintName = "Pods-Petulant Adventure-GRMustache"
                ReferencedContainer = "container:Pods.xcodeproj">

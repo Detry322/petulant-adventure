@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2BD5270BB491C83BD63CD949"
+               BlueprintIdentifier = "BF7FFC9E81B931BE820C9E9B"
                BuildableName = "libPods-Petulant AdventureTests-Mapbox-iOS-SDK.a"
                BlueprintName = "Pods-Petulant AdventureTests-Mapbox-iOS-SDK"
                ReferencedContainer = "container:Pods.xcodeproj">
