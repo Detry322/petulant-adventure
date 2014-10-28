@@ -30,8 +30,12 @@
 + (NSArray *)encodedPointStringToPointArray:(NSString *)encodedString;
 + (CLLocation *)createCoordinateFromDictionary:(NSDictionary *)dictionary;
 
+- (id)init;
 - (id)initWithDirectionsData:(NSDictionary *)directionsData;
 
-- (void)createStepFromStepArray:(NSArray *)stepArray;
+- (void)initializeOverviewWithDirectionsData:(NSDictionary *)directionsData;
+- (void)initializeOriginAndDestinationWithDirectionsData:(NSDictionary *)directionsData;
+- (void)initializeDirectionStepsWithDirectionsData:(NSDictionary *)directionsData;
+- (void)addStepFromStepObject:(NSDictionary *)step;
 
 @end
