@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04059F341A005DC300B6F19C /* DirectionSetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04059F331A005DC300B6F19C /* DirectionSetTests.m */; };
 		040FD9B519FEEDD000BA1E9A /* DirectionSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 040FD9B419FEEDD000BA1E9A /* DirectionSet.m */; };
 		040FD9B619FEEDD000BA1E9A /* DirectionSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 040FD9B419FEEDD000BA1E9A /* DirectionSet.m */; };
 		048EA73619FC58FE00A98417 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 048EA73519FC58FE00A98417 /* main.m */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04059F331A005DC300B6F19C /* DirectionSetTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionSetTests.m; path = "../Petulant Adventure/DirectionSetTests.m"; sourceTree = "<group>"; };
 		040FD9B219FEE6A200BA1E9A /* APIData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIData.h; sourceTree = "<group>"; };
 		040FD9B319FEEDD000BA1E9A /* DirectionSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionSet.h; sourceTree = "<group>"; };
 		040FD9B419FEEDD000BA1E9A /* DirectionSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionSet.m; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		048EA74C19FC58FE00A98417 /* Petulant AdventureTests */ = {
 			isa = PBXGroup;
 			children = (
+				04059F331A005DC300B6F19C /* DirectionSetTests.m */,
 				048EA74F19FC58FE00A98417 /* Petulant_AdventureTests.m */,
 				048EA74D19FC58FE00A98417 /* Supporting Files */,
 			);
@@ -395,6 +398,7 @@
 			files = (
 				040FD9B619FEEDD000BA1E9A /* DirectionSet.m in Sources */,
 				048EA75019FC58FE00A98417 /* Petulant_AdventureTests.m in Sources */,
+				04059F341A005DC300B6F19C /* DirectionSetTests.m in Sources */,
 				04DF357119FFFEA7005A07C0 /* RaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
