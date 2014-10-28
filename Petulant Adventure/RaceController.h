@@ -7,7 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CLLocation.h>
+#import "DirectionSet.h"
+
+typedef enum {
+    RaceInLobby,
+    RaceInProgress,
+    RaceAtFinishLine,
+    RaceFinished
+} RACE_STATE;
 
 @interface RaceController : NSObject
+
+@property (readonly) BOOL isHost; //host only picks destination, everyone sends data to everyone
+@property (readonly) RACE_STATE state;
+@property (readonly) CLLocation *destination;
+@property (readonly) DirectionSet *directions;
+@property (readonly) NSDictionary *players;
+
 
 @end
