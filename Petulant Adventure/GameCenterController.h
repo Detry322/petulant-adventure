@@ -10,4 +10,12 @@
 
 @interface GameCenterController : NSObject
 
+@property (readonly) BOOL loggedIn;
+
++ (GameCenterController *)sharedController;
+
+-(void)authUser;
+-(void)authStateChanged;
+
+
 @end
