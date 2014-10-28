@@ -13,20 +13,22 @@
 
 @property (readonly) NSString *originAddress;
 @property (readonly) NSString *destinationAddress;
+@property (readonly) CLLocation *originCoordinate;
+@property (readonly) CLLocation *destinationCoordinate;
 
 @property (readonly) NSArray *overviewPoints;
-@property (readonly) CLLocationCoordinate2D overviewNortheastBound;
-@property (readonly) CLLocationCoordinate2D overviewSouthwestBound;
+@property (readonly) CLLocation *overviewNortheastBound;
+@property (readonly) CLLocation *overviewSouthwestBound;
 
 @property (readonly) int steps; //Number of turns
-@property (readonly) int distance; //in meters
-@property (readonly) int duration; //in seconds
+@property (readonly) NSString *distance;
+@property (readonly) NSString *duration;
 
 @property (readonly) NSArray *directionSteps;
-@property (readonly) NSArray *directionManeuvers;
 @property (readonly) NSArray *directionStepPoints;
 
-+ (NSArray *)encodedPointStringToPointArray:(NSString *)encodedString andStartLatitude:(NSString *)startLatitude andStartLongitude:(NSString *)startLongitude;
++ (NSArray *)encodedPointStringToPointArray:(NSString *)encodedString;
++ (CLLocation *)createCoordinateFromDictionary:(NSDictionary *)dictionary;
 
 - (id)initWithDirectionsData:(NSDictionary *)directionsData;
 
