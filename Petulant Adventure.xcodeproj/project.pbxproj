@@ -16,6 +16,9 @@
 		048EA74419FC58FE00A98417 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048EA74219FC58FE00A98417 /* LaunchScreen.xib */; };
 		048EA75019FC58FE00A98417 /* Petulant_AdventureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 048EA74F19FC58FE00A98417 /* Petulant_AdventureTests.m */; };
 		04A409801A001B4C0082889E /* GameCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A4097F1A001B4C0082889E /* GameCenterController.m */; };
+		04A409821A0023B50082889E /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A409811A0023B50082889E /* GameKit.framework */; };
+		04A409881A002CF50082889E /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A409871A002CF50082889E /* Player.m */; };
+		04A4098B1A00307F0082889E /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A4098A1A00307F0082889E /* LocationManager.m */; };
 		04B6741719FF62C700216D10 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6741619FF62C700216D10 /* HomeViewController.m */; };
 		04B6741A19FF62E400216D10 /* RaceLobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6741919FF62E400216D10 /* RaceLobbyViewController.m */; };
 		04B6741D19FF62F700216D10 /* CountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6741C19FF62F700216D10 /* CountdownViewController.m */; };
@@ -54,6 +57,12 @@
 		048EA74F19FC58FE00A98417 /* Petulant_AdventureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Petulant_AdventureTests.m; sourceTree = "<group>"; };
 		04A4097E1A001B4C0082889E /* GameCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterController.h; sourceTree = "<group>"; };
 		04A4097F1A001B4C0082889E /* GameCenterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterController.m; sourceTree = "<group>"; };
+		04A409811A0023B50082889E /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		04A409851A0029830082889E /* RaceMapViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceMapViewDelegate.h; sourceTree = "<group>"; };
+		04A409861A002CF50082889E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		04A409871A002CF50082889E /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		04A409891A00307F0082889E /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		04A4098A1A00307F0082889E /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		04B6741519FF62C700216D10 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		04B6741619FF62C700216D10 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		04B6741819FF62E400216D10 /* RaceLobbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceLobbyViewController.h; sourceTree = "<group>"; };
@@ -79,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A409821A0023B50082889E /* GameKit.framework in Frameworks */,
 				267D9AAA5AAE821B67D3B21F /* libPods-Petulant Adventure.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,8 +141,13 @@
 				04B6741F19FF631700216D10 /* FinishLineViewController.m */,
 				040FD9B319FEEDD000BA1E9A /* DirectionSet.h */,
 				040FD9B419FEEDD000BA1E9A /* DirectionSet.m */,
+				04A409891A00307F0082889E /* LocationManager.h */,
+				04A4098A1A00307F0082889E /* LocationManager.m */,
+				04A409851A0029830082889E /* RaceMapViewDelegate.h */,
 				04DF356E19FFFEA7005A07C0 /* RaceController.h */,
 				04DF356F19FFFEA7005A07C0 /* RaceController.m */,
+				04A409861A002CF50082889E /* Player.h */,
+				04A409871A002CF50082889E /* Player.m */,
 				04A4097E1A001B4C0082889E /* GameCenterController.h */,
 				04A4097F1A001B4C0082889E /* GameCenterController.m */,
 				040FD9B219FEE6A200BA1E9A /* APIData.h */,
@@ -173,6 +188,7 @@
 		C4B7728B2E44F9046DF0480A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04A409811A0023B50082889E /* GameKit.framework */,
 				F80CA85EFCD593BF885A2E7A /* libPods-Petulant Adventure.a */,
 				E310B610CD9775C9DBB3D8DB /* libPods-Petulant AdventureTests.a */,
 			);
@@ -358,12 +374,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A4098B1A00307F0082889E /* LocationManager.m in Sources */,
 				048EA73919FC58FE00A98417 /* AppDelegate.m in Sources */,
 				04B6742319FF632900216D10 /* RaceViewController.m in Sources */,
 				04A409801A001B4C0082889E /* GameCenterController.m in Sources */,
 				04B6741A19FF62E400216D10 /* RaceLobbyViewController.m in Sources */,
 				040FD9B519FEEDD000BA1E9A /* DirectionSet.m in Sources */,
 				04B6741719FF62C700216D10 /* HomeViewController.m in Sources */,
+				04A409881A002CF50082889E /* Player.m in Sources */,
 				04DF357019FFFEA7005A07C0 /* RaceController.m in Sources */,
 				04B6742019FF631700216D10 /* FinishLineViewController.m in Sources */,
 				04B6741D19FF62F700216D10 /* CountdownViewController.m in Sources */,
