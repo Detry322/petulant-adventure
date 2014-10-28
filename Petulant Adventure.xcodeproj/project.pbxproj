@@ -16,6 +16,11 @@
 		048EA74119FC58FE00A98417 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048EA74019FC58FE00A98417 /* Images.xcassets */; };
 		048EA74419FC58FE00A98417 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048EA74219FC58FE00A98417 /* LaunchScreen.xib */; };
 		048EA75019FC58FE00A98417 /* Petulant_AdventureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 048EA74F19FC58FE00A98417 /* Petulant_AdventureTests.m */; };
+		04B6741719FF62C700216D10 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6741619FF62C700216D10 /* HomeViewController.m */; };
+		04B6741A19FF62E400216D10 /* RaceLobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6741919FF62E400216D10 /* RaceLobbyViewController.m */; };
+		04B6741D19FF62F700216D10 /* CountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6741C19FF62F700216D10 /* CountdownViewController.m */; };
+		04B6742019FF631700216D10 /* FinishLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6741F19FF631700216D10 /* FinishLineViewController.m */; };
+		04B6742319FF632900216D10 /* RaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6742219FF632900216D10 /* RaceViewController.m */; };
 		267D9AAA5AAE821B67D3B21F /* libPods-Petulant Adventure.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F80CA85EFCD593BF885A2E7A /* libPods-Petulant Adventure.a */; };
 		CBF4ACFD84ECF8AFC5D67975 /* libPods-Petulant AdventureTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E310B610CD9775C9DBB3D8DB /* libPods-Petulant AdventureTests.a */; };
 /* End PBXBuildFile section */
@@ -47,6 +52,16 @@
 		048EA74919FC58FE00A98417 /* Petulant AdventureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Petulant AdventureTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		048EA74E19FC58FE00A98417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048EA74F19FC58FE00A98417 /* Petulant_AdventureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Petulant_AdventureTests.m; sourceTree = "<group>"; };
+		04B6741519FF62C700216D10 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		04B6741619FF62C700216D10 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		04B6741819FF62E400216D10 /* RaceLobbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceLobbyViewController.h; sourceTree = "<group>"; };
+		04B6741919FF62E400216D10 /* RaceLobbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceLobbyViewController.m; sourceTree = "<group>"; };
+		04B6741B19FF62F700216D10 /* CountdownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownViewController.h; sourceTree = "<group>"; };
+		04B6741C19FF62F700216D10 /* CountdownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownViewController.m; sourceTree = "<group>"; };
+		04B6741E19FF631700216D10 /* FinishLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishLineViewController.h; sourceTree = "<group>"; };
+		04B6741F19FF631700216D10 /* FinishLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishLineViewController.m; sourceTree = "<group>"; };
+		04B6742119FF632900216D10 /* RaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceViewController.h; sourceTree = "<group>"; };
+		04B6742219FF632900216D10 /* RaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceViewController.m; sourceTree = "<group>"; };
 		04BA7389E57278FFC187BA58 /* Pods-Petulant AdventureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petulant AdventureTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Petulant AdventureTests/Pods-Petulant AdventureTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5409F9C116721108114BBC8E /* Pods-Petulant Adventure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petulant Adventure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Petulant Adventure/Pods-Petulant Adventure.debug.xcconfig"; sourceTree = "<group>"; };
 		8514AD90D02CD6CED5F868C8 /* Pods-Petulant Adventure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petulant Adventure.release.xcconfig"; path = "Pods/Target Support Files/Pods-Petulant Adventure/Pods-Petulant Adventure.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +119,16 @@
 				048EA73B19FC58FE00A98417 /* ViewController.m */,
 				040FD9B319FEEDD000BA1E9A /* DirectionSet.h */,
 				040FD9B419FEEDD000BA1E9A /* DirectionSet.m */,
+				04B6741519FF62C700216D10 /* HomeViewController.h */,
+				04B6741619FF62C700216D10 /* HomeViewController.m */,
+				04B6741819FF62E400216D10 /* RaceLobbyViewController.h */,
+				04B6741919FF62E400216D10 /* RaceLobbyViewController.m */,
+				04B6741B19FF62F700216D10 /* CountdownViewController.h */,
+				04B6741C19FF62F700216D10 /* CountdownViewController.m */,
+				04B6742119FF632900216D10 /* RaceViewController.h */,
+				04B6742219FF632900216D10 /* RaceViewController.m */,
+				04B6741E19FF631700216D10 /* FinishLineViewController.h */,
+				04B6741F19FF631700216D10 /* FinishLineViewController.m */,
 				040FD9B219FEE6A200BA1E9A /* APIData.h */,
 				048EA73D19FC58FE00A98417 /* Main.storyboard */,
 				048EA74019FC58FE00A98417 /* Images.xcassets */,
@@ -329,7 +354,12 @@
 			files = (
 				048EA73C19FC58FE00A98417 /* ViewController.m in Sources */,
 				048EA73919FC58FE00A98417 /* AppDelegate.m in Sources */,
+				04B6742319FF632900216D10 /* RaceViewController.m in Sources */,
+				04B6741A19FF62E400216D10 /* RaceLobbyViewController.m in Sources */,
 				040FD9B519FEEDD000BA1E9A /* DirectionSet.m in Sources */,
+				04B6741719FF62C700216D10 /* HomeViewController.m in Sources */,
+				04B6742019FF631700216D10 /* FinishLineViewController.m in Sources */,
+				04B6741D19FF62F700216D10 /* CountdownViewController.m in Sources */,
 				048EA73619FC58FE00A98417 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
