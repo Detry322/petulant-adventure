@@ -1,0 +1,11 @@
+//
+//  APIData.h
+//  Petulant Adventure
+//
+//  Created by Jack Serrino on 10/25/14.
+//  Copyright (c) 2014 Jack Serrino. All rights reserved.
+//
+
+#define MAPBOX_ACCESS_TOKEN @""
+#define MAPBOX_MAP_ID @""
+#define GOOGLE_API_KEY @""
