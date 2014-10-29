@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "RaceMapViewDelegate.h"
+#import "RaceDelegate.h"
 
-@interface RaceViewController : UIViewController <RaceMapViewDelegate>
+@interface RaceViewController : UIViewController <RaceMapViewDelegate, RaceDelegate>
 
 @end

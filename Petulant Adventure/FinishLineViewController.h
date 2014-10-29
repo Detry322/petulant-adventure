@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RaceDelegate.h"
 
-@interface FinishLineViewController : UIViewController
+@interface FinishLineViewController : UIViewController <RaceDelegate>
 
 @end

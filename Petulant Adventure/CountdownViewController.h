@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RaceDelegate.h"
 
-@interface CountdownViewController : UIViewController
+@interface CountdownViewController : UIViewController <RaceDelegate>
 
 @end
