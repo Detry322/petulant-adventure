@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "DirectionSet.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface DirectionSetTests : XCTestCase
 
@@ -24,6 +25,21 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+- (void)testInitialization {
+    XCTestExpectation *getDirectionsExpectation = [self expectationWithDescription:@"Get Directions"];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"https://maps.googleapis.com/maps/api/directions/json" parameters:@{ @"origin": @"Toronto", @"destination":@"Montreal"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        DirectionSet *set = [[DirectionSet alloc] initWithDirectionsData:responseObject];
+        XCTAssert(YES);
+        [getDirectionsExpectation fulfill];
+        NSLog(@"%@",set);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        XCTAssert(NO);
+        NSLog(@"Error: %@", error);
+    }];
+    [self waitForExpectationsWithTimeout:2 handler:nil];
 }
 
 - (void)testEncodedPointStringToPointArray {

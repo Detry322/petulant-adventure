@@ -43,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		04059F331A005DC300B6F19C /* DirectionSetTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionSetTests.m; path = "../Petulant Adventure/DirectionSetTests.m"; sourceTree = "<group>"; };
+		04059F371A00760A00B6F19C /* RaceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceDelegate.h; sourceTree = "<group>"; };
 		040FD9B219FEE6A200BA1E9A /* APIData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIData.h; sourceTree = "<group>"; };
 		040FD9B319FEEDD000BA1E9A /* DirectionSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionSet.h; sourceTree = "<group>"; };
 		040FD9B419FEEDD000BA1E9A /* DirectionSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionSet.m; sourceTree = "<group>"; };
@@ -146,6 +147,7 @@
 				04A409891A00307F0082889E /* LocationManager.h */,
 				04A4098A1A00307F0082889E /* LocationManager.m */,
 				04A409851A0029830082889E /* RaceMapViewDelegate.h */,
+				04059F371A00760A00B6F19C /* RaceDelegate.h */,
 				04DF356E19FFFEA7005A07C0 /* RaceController.h */,
 				04DF356F19FFFEA7005A07C0 /* RaceController.m */,
 				04A409861A002CF50082889E /* Player.h */,
