@@ -8,6 +8,12 @@
 
 #ifndef Petulant_Adventure_DirectionsReceiver_h
 #define Petulant_Adventure_DirectionsReceiver_h
+#import "DirectionSet.h"
 
+@protocol DirectionsReceiver
+
+-(void)receiveDirections:(id)set;
+
+@end
 
 #endif
