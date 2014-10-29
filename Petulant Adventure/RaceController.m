@@ -7,6 +7,7 @@
 //
 
 #import "RaceController.h"
+#import "LocationManager.h"
 
 @implementation RaceController
 
@@ -42,6 +43,7 @@ static RaceController *controller = nil;
 - (void)startMatch {
     _state = RaceInProgress;
     _startDate = [NSDate date];
+    [DirectionSet getDirectionsFrom:[LocationManager currentLocation] to:_destination receiver:self];
     //@TODO
 }
 
@@ -119,6 +121,10 @@ static RaceController *controller = nil;
 
 - (void)matchEndedWithReason:(MATCH_END_REASON)reason {
     [_raceDelegate matchEndedWithReason:reason];
+}
+
+- (void)receiveDirections:(id)set {
+    _directions = set;
 }
 
 @end

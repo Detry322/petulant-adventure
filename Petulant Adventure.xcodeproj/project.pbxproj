@@ -47,6 +47,7 @@
 		040FD9B219FEE6A200BA1E9A /* APIData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIData.h; sourceTree = "<group>"; };
 		040FD9B319FEEDD000BA1E9A /* DirectionSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionSet.h; sourceTree = "<group>"; };
 		040FD9B419FEEDD000BA1E9A /* DirectionSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionSet.m; sourceTree = "<group>"; };
+		048CB3471A00B49F00CB2F44 /* DirectionsReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionsReceiver.h; sourceTree = "<group>"; };
 		048EA73019FC58FE00A98417 /* Petulant Adventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Petulant Adventure.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		048EA73419FC58FE00A98417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048EA73519FC58FE00A98417 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -142,6 +143,7 @@
 				04B6742219FF632900216D10 /* RaceViewController.m */,
 				04B6741E19FF631700216D10 /* FinishLineViewController.h */,
 				04B6741F19FF631700216D10 /* FinishLineViewController.m */,
+				048CB3471A00B49F00CB2F44 /* DirectionsReceiver.h */,
 				040FD9B319FEEDD000BA1E9A /* DirectionSet.h */,
 				040FD9B419FEEDD000BA1E9A /* DirectionSet.m */,
 				04A409891A00307F0082889E /* LocationManager.h */,

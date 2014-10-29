@@ -21,7 +21,7 @@ typedef enum {
     RaceError
 } RACE_STATE;
 
-@interface RaceController : NSObject
+@interface RaceController : NSObject <DirectionsReceiver>
 
 @property (readonly) BOOL isHost; //host only picks destination, everyone sends data to everyone
 @property (readonly) RACE_STATE state;
@@ -54,5 +54,7 @@ typedef enum {
 - (void)playerDisconnected:(NSString *)playerIdentifier;
 
 - (void)matchEndedWithReason:(MATCH_END_REASON)reason;
+
+- (void)receiveDirections:(id)set;
 
 @end
