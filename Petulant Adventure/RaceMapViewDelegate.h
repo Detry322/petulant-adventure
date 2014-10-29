@@ -13,7 +13,7 @@
 
 -(void)redrawPlayer:(NSString *)identifier;
 @optional
--(void)redrawDestination;
+-(void)redrawDestination; //For RaceLobbyViewController
 
 @end
 
