@@ -14,5 +14,11 @@
 @property CLLocation *location;
 @property (readonly) NSString *identifier;
 @property BOOL arrived;
+@property NSDate *arrivedTime;
+
+- (id)initWithIdentifier:(NSString *)identifier;
+- (BOOL)isAtDestination:(CLLocation *)destination;
+- (BOOL)isCloseToOtherPlayer:(Player *)otherPlayer;
+- (void)arrive;
 
 @end
