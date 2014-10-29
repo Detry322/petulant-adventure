@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CLLocation.h>
+#import "DirectionsReceiver.h"
 
 @interface DirectionSet : NSObject
 
@@ -29,6 +30,8 @@
 
 + (NSArray *)encodedPointStringToPointArray:(NSString *)encodedString;
 + (CLLocation *)createCoordinateFromDictionary:(NSDictionary *)dictionary;
++ (NSString *)locationToString:(CLLocation *)location;
++ (void)getDirectionsFrom:(CLLocation *)origin to:(CLLocation *)destination receiver:(id<DirectionsReceiver>)receiver;
 
 - (id)init;
 - (id)initWithDirectionsData:(NSDictionary *)directionsData;

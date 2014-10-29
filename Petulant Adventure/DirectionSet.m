@@ -7,6 +7,8 @@
 //
 
 #import "DirectionSet.h"
+#import "APIData.h"
+#import <AFNetworking/AFNetworking.h>
 
 @implementation DirectionSet
 
@@ -59,6 +61,26 @@
     float latitude = [dictionary[@"lat"] floatValue];
     float longitude = [dictionary[@"long"] floatValue];
     return [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+}
+
++ (NSString *)locationToString:(CLLocation *)location {
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    return [NSString stringWithFormat:@"%.18f,%.18f", coordinate.latitude, coordinate.longitude];
+}
+
++ (void)getDirectionsFrom:(CLLocation *)origin to:(CLLocation *)destination receiver:(id<DirectionsReceiver>)receiver{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    id parameters = @{
+                      @"origin": [self locationToString:origin],
+                      @"destination": [self locationToString:destination],
+                      @"key": GOOGLE_API_KEY
+                      };
+    [manager GET:@"http://example.com/resources.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Successfully Retreived Directions");
+        [receiver receiveDirections:[[DirectionSet alloc] initWithDirectionsData:responseObject]];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error, Could not fetch directions: %@", error);
+    }];
 }
 
 - (id)init {
