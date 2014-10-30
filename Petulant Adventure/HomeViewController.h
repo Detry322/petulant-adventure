@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RaceDelegate.h"
+#import "MatchmakingDelegate.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <RaceDelegate, MatchmakingDelegate>
 
 @end
