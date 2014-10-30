@@ -86,38 +86,12 @@
                     <navigationItem key="navigationItem" id="tfq-Xn-hsL"/>
                     <connections>
                         <segue destination="oJp-02-2ph" kind="push" identifier="finishRace" id="S9w-zh-Y8T"/>
-                        <segue destination="byI-VV-Pvw" kind="modal" id="dKu-3u-6BY"/>
+                        <segue destination="kgG-Er-sAj" kind="push" id="gfy-lq-elE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8T-Y5-htq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1011" y="163"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="lgL-sk-e84">
-            <objects>
-                <viewController id="byI-VV-Pvw" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eLO-Fz-mJ3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" id="9P0-eX-nFs">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Directions" id="pAb-hE-0SH">
-                                        <barButtonItem key="rightBarButtonItem" title="Close" id="v6K-gY-zNE"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5UG-56-m05" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1011" y="865"/>
         </scene>
         <!--Finish Line View Controller-->
         <scene sceneID="ysw-m2-AbW">
@@ -133,6 +107,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dhw-pu-HKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1417" y="163"/>
+        </scene>
+        <!--Directions View Controller-->
+        <scene sceneID="pO4-6V-Hu5">
+            <objects>
+                <viewController id="kgG-Er-sAj" customClass="DirectionsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O5B-Ou-mgf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2ci-qv-fak"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hzf-T8-qXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1417" y="877"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
