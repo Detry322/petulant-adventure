@@ -12,8 +12,11 @@
 #import "RaceDelegate.h"
 #import "RaceMapViewDelegate.h"
 #import "Player.h"
+#import "LocationManager.h"
+#import "GameCenterController.h"
 
 typedef enum {
+    RacePreLobby,
     RaceInLobby,
     RaceInProgress,
     RaceAtFinishLine,
@@ -21,7 +24,7 @@ typedef enum {
     RaceError
 } RACE_STATE;
 
-@interface RaceController : NSObject <DirectionsReceiver>
+@interface RaceController : NSObject <DirectionsReceiver, LocationReceiver>
 
 @property (readonly) BOOL isHost; //host only picks destination, everyone sends data to everyone
 @property (readonly) RACE_STATE state;
@@ -34,11 +37,14 @@ typedef enum {
 @property id<RaceDelegate> raceDelegate;
 
 + (RaceController *)sharedController;
-+ (void)createRace:(BOOL)isHost withLocalPlayerIdentifier:(NSString *)localPlayerIdentifier andDelegate:(id<RaceDelegate>)raceDelegate andMapViewDelegate:(id<RaceMapViewDelegate>)raceMapViewDelegate;
++ (void)createRaceWithLocalPlayerIdentifier:(NSString *)localPlayerIdentifier;
 + (void)cleanUp;
 
-- (id)init:(BOOL)isHost withLocalPlayerIdentifier:(NSString *)localPlayerIdentifier;
+- (id)initWithLocalPlayerIdentifier:(NSString *)localPlayerIdentifier;
 
+- (void)determineHost;
+
+- (void)moveToLobby;
 - (void)startMatch;
 
 - (BOOL)isMatchReady;
@@ -55,6 +61,9 @@ typedef enum {
 
 - (void)matchEndedWithReason:(MATCH_END_REASON)reason;
 
+#pragma mark DirectionReceiver
 - (void)receiveDirections:(id)set;
+#pragma mark LocationReceiver
+- (void)receiveLocation:(CLLocation *)newLocation;
 
 @end

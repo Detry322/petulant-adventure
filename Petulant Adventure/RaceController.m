@@ -7,7 +7,6 @@
 //
 
 #import "RaceController.h"
-#import "LocationManager.h"
 
 @implementation RaceController
 
@@ -16,22 +15,19 @@ static RaceController *controller = nil;
     return controller;
 }
 
-+ (void)createRace:(BOOL)isHost withLocalPlayerIdentifier:(NSString *)localPlayerIdentifier andDelegate:(id<RaceDelegate>)raceDelegate andMapViewDelegate:(id<RaceMapViewDelegate>)raceMapViewDelegate{
-    controller = [[RaceController alloc] init:isHost withLocalPlayerIdentifier:localPlayerIdentifier];
-    [controller setRaceDelegate:raceDelegate];
-    [controller setRaceMapViewDelegate:raceMapViewDelegate];
++ (void)createRaceWithLocalPlayerIdentifier:(NSString *)localPlayerIdentifier{
+    controller = [[RaceController alloc] initWithLocalPlayerIdentifier:localPlayerIdentifier];
 }
 
 + (void)cleanUp {
     controller = nil;
 }
 
-- (id)init:(BOOL) isHost withLocalPlayerIdentifier:(NSString *)localPlayerIdentifier{
+- (id)initWithLocalPlayerIdentifier:(NSString *)localPlayerIdentifier{
     if (self = [super init])
     {
         _players = [[NSMutableDictionary alloc] init];
-        _state = RaceInLobby;
-        _isHost = isHost;
+        _state = RacePreLobby;
         _localPlayerIdentifier = localPlayerIdentifier;
         [self addPlayerFromIdentifier:localPlayerIdentifier];
         return self;
@@ -39,12 +35,24 @@ static RaceController *controller = nil;
     return nil;
 }
 
+- (void)determineHost {
+    NSArray *playerIdentifiers = [_players allKeys];
+    NSArray *sortedPlayerIdentifiers = [playerIdentifiers sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    _isHost = [_localPlayerIdentifier isEqualToString:[sortedPlayerIdentifiers firstObject]];
+}
+
+- (void)moveToLobby {
+    _state = RaceInLobby;
+    [self determineHost];
+    [LocationManager startTrackingLocationWithReceiver:self];
+}
 
 - (void)startMatch {
     _state = RaceInProgress;
     _startDate = [NSDate date];
     [DirectionSet getDirectionsFrom:[LocationManager currentLocation] to:_destination receiver:self];
-    //@TODO
+    if (_isHost)
+        [[GameCenterController sharedController] sendMatchStart];
 }
 
 - (BOOL)didMatchStart {
@@ -76,6 +84,8 @@ static RaceController *controller = nil;
 
 - (void)destinationUpdated:(CLLocation *)newDestination {
     _destination = newDestination;
+    if (_isHost)
+        [[GameCenterController sharedController] sendDestination:newDestination];
     [_raceMapViewDelegate redrawDestination];
 }
 
@@ -100,7 +110,7 @@ static RaceController *controller = nil;
         }
         if ([self didAllPlayersArrive])
         {
-            //End the match here
+            [self matchEndedWithReason:MatchSuccessMatchCompleted];
         }
     }
     [_raceMapViewDelegate redrawPlayer:playerIdentifier];
@@ -108,7 +118,7 @@ static RaceController *controller = nil;
 }
 
 - (void)playerDisconnected:(NSString *)playerIdentifier{
-    [self matchEndedWithReason:PlayerDisconnected];
+    [self matchEndedWithReason:MatchFailedPlayerDisconnected];
 }
 
 - (BOOL)addPlayerFromIdentifier:(NSString *)identifier {
@@ -120,11 +130,18 @@ static RaceController *controller = nil;
 }
 
 - (void)matchEndedWithReason:(MATCH_END_REASON)reason {
+    _state = (reason == MatchSuccessMatchCompleted) ? RaceFinished : RaceError;
     [_raceDelegate matchEndedWithReason:reason];
 }
 
+#pragma mark DirectionReceiver
 - (void)receiveDirections:(id)set {
     _directions = set;
+}
+#pragma mark LocationReceiver
+- (void)receiveLocation:(CLLocation *)newLocation {
+    [self playerUpdated:_localPlayerIdentifier withLocation:newLocation];
+    [[GameCenterController sharedController] sendLocation:newLocation];
 }
 
 @end
