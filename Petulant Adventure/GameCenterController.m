@@ -7,6 +7,7 @@
 //
 
 #import "GameCenterController.h"
+#import "RaceController.h"
 
 @implementation GameCenterController
 
@@ -34,13 +35,26 @@ static GameCenterController *controller = nil;
     }
 }
 
+#pragma mark Game Flow Control
 
+- (void)sendLocation:(CLLocation *)location {
+    [self sendData:GameCenterMessageNewLocation location:location];
+}
+
+- (void)sendDestination:(CLLocation *)destination {
+    [self sendData:GameCenterMessageNewDestination location:destination];
+}
+
+- (void)sendMatchStart {
+    [self sendData:GameCenterMessageStartMatch location:nil];
+}
 
 #pragma mark GKMatchmakerViewControllerDelegate
 
 // The user has cancelled matchmaking
 - (void)matchmakerViewControllerWasCancelled:(GKMatchmakerViewController *)viewController {
     [_containerViewController dismissModalViewControllerAnimated:YES];
+    [_matchmakingDelegate matchCancelled];
     NSLog(@"User cancelled matchmaking");
 }
 
@@ -48,22 +62,26 @@ static GameCenterController *controller = nil;
 - (void)matchmakerViewController:(GKMatchmakerViewController *)viewController didFailWithError:(NSError *)error {
     [_containerViewController dismissModalViewControllerAnimated:YES];
     NSLog(@"Error finding match: %@", error.localizedDescription);
+    [_matchmakingDelegate matchError];
 }
 
 // A peer-to-peer match has been found, the game should start
 - (void)matchmakerViewController:(GKMatchmakerViewController *)viewController didFindMatch:(GKMatch *)theMatch {
     [_containerViewController dismissModalViewControllerAnimated:YES];
+    NSString *localPlayerIdentifier = [[GKLocalPlayer localPlayer] playerID];
+    [RaceController createRaceWithLocalPlayerIdentifier:localPlayerIdentifier];
     _match = theMatch;
     _match.delegate = self;
     if (_match.expectedPlayerCount == 0) {
-        NSLog(@"Ready to start match!");
-        //TODO
+        [[RaceController sharedController] moveToLobby];
     }
+    [_matchmakingDelegate matchFound];
 }
 
-- (void)findMatchWithViewController:(UIViewController *)viewController{
+- (void)findMatchWithViewController:(UIViewController *)viewController andMatchmakingDelegate:(id<MatchmakingDelegate>)delegate{
     _match = nil;
     _containerViewController = viewController;
+    _matchmakingDelegate = delegate;
     [viewController dismissModalViewControllerAnimated:NO];
     
     GKMatchRequest *request = [[GKMatchRequest alloc] init];
@@ -73,35 +91,28 @@ static GameCenterController *controller = nil;
     GKMatchmakerViewController *mmvc =
     [[GKMatchmakerViewController alloc] initWithMatchRequest:request];
     mmvc.matchmakerDelegate = self;
-    
+    [_matchmakingDelegate matchSearching];
     [viewController presentModalViewController:mmvc animated:YES];
 }
 
 #pragma mark GKMatchDelegate
-
-// The match received data sent from the player.
-- (void)match:(GKMatch *)theMatch didReceiveData:(NSData *)data fromRemotePlayer:(NSString *)playerID {
-    if (_match != theMatch) return;
-    //This is really complicated and will take time.
-}
 
 - (void)match:(GKMatch *)theMatch player:(NSString *)playerID didChangeConnectionState:(GKPlayerConnectionState)state {
     if (_match != theMatch) return;
     
     switch (state) {
         case GKPlayerStateConnected:
-            // handle a new player connection.
+            [[RaceController sharedController] addPlayerFromIdentifier:playerID];
             NSLog(@"Player connected!");
             
             if (theMatch.expectedPlayerCount == 0) {
-                NSLog(@"Ready to start match!");
+                [[RaceController sharedController] moveToLobby];
             }
             
             break;
         case GKPlayerStateDisconnected:
-            // a player just disconnected.
             NSLog(@"Player disconnected!");
-            //TODO
+            [[RaceController sharedController] matchEndedWithReason:MatchFailedPlayerDisconnected];
             break;
     }
 }
@@ -111,7 +122,7 @@ static GameCenterController *controller = nil;
     if (_match != theMatch) return;
     
     NSLog(@"Failed to connect to player with error: %@", error.localizedDescription);
-    //TODO
+    [[RaceController sharedController] matchEndedWithReason:MatchFailedPlayerUnreachable];
 }
 
 // The match was unable to be established with any players due to an error.
@@ -119,7 +130,53 @@ static GameCenterController *controller = nil;
     if (_match != theMatch) return;
     
     NSLog(@"Match failed with error: %@", error.localizedDescription);
-    //TODO
+    [[RaceController sharedController] matchEndedWithReason:MatchFailedNoDataSent];
+}
+
+- (void)sendData:(GameCenterMessageType)type location:(CLLocation *)location {
+    NSUInteger len = sizeof(struct GameCenterMessage);
+    GameCenterMessage *message = malloc(len);
+    message->messageType = type;
+    if (location) {
+        message->latitude = [location coordinate].latitude;
+        message->longitude = [location coordinate].longitude;
+    }
+    else
+    {
+        message->latitude = message->longitude = 0;
+    }
+    NSData *data = [[NSData alloc] initWithBytesNoCopy:message length:len];
+    NSError *error;
+    BOOL success = [_match sendDataToAllPlayers:data withDataMode:GKMatchSendDataReliable error:&error];
+    if (!success) {
+        NSLog(@"Error sending init packet");
+        [[RaceController sharedController] matchEndedWithReason:MatchFailedNoDataSent];
+    }
+}
+
+CLLocation* locationFromMessage(GameCenterMessage *message) {
+    return [[CLLocation alloc] initWithLatitude:message->latitude longitude:message->longitude];
+}
+
+// The match received data sent from the player.
+- (void)match:(GKMatch *)theMatch didReceiveData:(NSData *)data fromRemotePlayer:(NSString *)playerID {
+    if (_match != theMatch) return;
+    GameCenterMessage *message = [data bytes];
+    switch (message->messageType)
+    {
+        case GameCenterMessageNewDestination:
+            NSLog(@"Destination Received from (%@): <%.10f, %.10f>", playerID, message->latitude, message->longitude);
+            [[RaceController sharedController] destinationUpdated:locationFromMessage(message)];
+            break;
+        case GameCenterMessageNewLocation:
+            NSLog(@"Location Received from (%@): <%.10f, %.10f>", playerID, message->latitude, message->longitude);
+            [[RaceController sharedController] playerUpdated:playerID withLocation:locationFromMessage(message)];
+            break;
+        case GameCenterMessageStartMatch:
+            NSLog(@"Start Match command Received");
+            [[RaceController sharedController] startMatch];
+            break;
+    }
 }
 
 @end

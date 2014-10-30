@@ -48,6 +48,7 @@
 		040FD9B319FEEDD000BA1E9A /* DirectionSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionSet.h; sourceTree = "<group>"; };
 		040FD9B419FEEDD000BA1E9A /* DirectionSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionSet.m; sourceTree = "<group>"; };
 		048CB3471A00B49F00CB2F44 /* DirectionsReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionsReceiver.h; sourceTree = "<group>"; };
+		048D9E4B1A01D96E00E4BF61 /* MatchmakingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchmakingDelegate.h; sourceTree = "<group>"; };
 		048EA73019FC58FE00A98417 /* Petulant Adventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Petulant Adventure.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		048EA73419FC58FE00A98417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048EA73519FC58FE00A98417 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 		04BA7389E57278FFC187BA58 /* Pods-Petulant AdventureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petulant AdventureTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Petulant AdventureTests/Pods-Petulant AdventureTests.debug.xcconfig"; sourceTree = "<group>"; };
 		04DF356E19FFFEA7005A07C0 /* RaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceController.h; sourceTree = "<group>"; };
 		04DF356F19FFFEA7005A07C0 /* RaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceController.m; sourceTree = "<group>"; };
+		04F3E0231A0158D500243F1C /* LocationReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationReceiver.h; sourceTree = "<group>"; };
 		5409F9C116721108114BBC8E /* Pods-Petulant Adventure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petulant Adventure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Petulant Adventure/Pods-Petulant Adventure.debug.xcconfig"; sourceTree = "<group>"; };
 		8514AD90D02CD6CED5F868C8 /* Pods-Petulant Adventure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petulant Adventure.release.xcconfig"; path = "Pods/Target Support Files/Pods-Petulant Adventure/Pods-Petulant Adventure.release.xcconfig"; sourceTree = "<group>"; };
 		A98139B4FC886145AFC29C66 /* Pods-Petulant AdventureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petulant AdventureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Petulant AdventureTests/Pods-Petulant AdventureTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,12 +146,14 @@
 				04B6741E19FF631700216D10 /* FinishLineViewController.h */,
 				04B6741F19FF631700216D10 /* FinishLineViewController.m */,
 				048CB3471A00B49F00CB2F44 /* DirectionsReceiver.h */,
+				04F3E0231A0158D500243F1C /* LocationReceiver.h */,
+				048D9E4B1A01D96E00E4BF61 /* MatchmakingDelegate.h */,
+				04A409851A0029830082889E /* RaceMapViewDelegate.h */,
+				04059F371A00760A00B6F19C /* RaceDelegate.h */,
 				040FD9B319FEEDD000BA1E9A /* DirectionSet.h */,
 				040FD9B419FEEDD000BA1E9A /* DirectionSet.m */,
 				04A409891A00307F0082889E /* LocationManager.h */,
 				04A4098A1A00307F0082889E /* LocationManager.m */,
-				04A409851A0029830082889E /* RaceMapViewDelegate.h */,
-				04059F371A00760A00B6F19C /* RaceDelegate.h */,
 				04DF356E19FFFEA7005A07C0 /* RaceController.h */,
 				04DF356F19FFFEA7005A07C0 /* RaceController.m */,
 				04A409861A002CF50082889E /* Player.h */,
