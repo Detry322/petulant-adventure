@@ -10,15 +10,20 @@
 #define Petulant_Adventure_RaceDelegate_h
 
 typedef enum {
-    PlayerDisconnected,
-    MatchCompleted,
+    MatchFailedPlayerDisconnected,
+    MatchFailedPlayerQuit,
+    MatchFailedPlayerUnreachable,
+    MatchFailedNoDataSent,
+    MatchSuccessMatchCompleted,
 } MATCH_END_REASON;
 
 @protocol RaceDelegate
 
 -(void)matchEndedWithReason:(MATCH_END_REASON)reason;
 @optional
--(void)localPlayerArrived;
+-(void)localPlayerArrived; //for RaceViewController
+-(void)lobbyReady; //for HomeViewController
+
 
 @end
 
